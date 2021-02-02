@@ -50,25 +50,25 @@ mutable struct GrB_UnaryOp <: Abstract_GrB_UnaryOp
     p::Ptr{Cvoid}
 end
 GrB_UnaryOp() = GrB_UnaryOp(C_NULL)
-show(io::IO, ::GrB_UnaryOp) = print("GrB_UnaryOp")
+show(io::IO, ::Abstract_GrB_UnaryOp) = print("GrB_UnaryOp")
 
 mutable struct GrB_BinaryOp <: Abstract_GrB_BinaryOp
     p::Ptr{Cvoid}
 end
 GrB_BinaryOp() = GrB_BinaryOp(C_NULL)
-show(io::IO, ::GrB_BinaryOp) = print("GrB_BinaryOp")
+show(io::IO, ::Abstract_GrB_BinaryOp) = print("GrB_BinaryOp")
 
 mutable struct GrB_Monoid <: Abstract_GrB_Monoid
     p::Ptr{Cvoid}
 end
 GrB_Monoid() = GrB_Monoid(C_NULL)
-show(io::IO, ::GrB_Monoid) = print("GrB_Monoid")
+show(io::IO, ::Abstract_GrB_Monoid) = print("GrB_Monoid")
 
 mutable struct GrB_Semiring <: Abstract_GrB_Semiring
     p::Ptr{Cvoid}
 end
 GrB_Semiring() = GrB_Semiring(C_NULL)
-show(io::IO, ::GrB_Semiring) = print("GrB_Semiring")
+show(io::IO, ::Abstract_GrB_Semiring) = print("GrB_Semiring")
 
 mutable struct GrB_Vector{T <: valid_types} <: Abstract_GrB_Vector
     p::Ptr{Cvoid}
@@ -88,7 +88,7 @@ end
 GrB_Descriptor() = GrB_Descriptor(C_NULL)
 show(io::IO, ::GrB_Descriptor) = print("GrB_Descriptor")
 
-mutable struct GxB_SelectOp
+mutable struct GxB_SelectOp <: Abstract_GxB_SelectOp
     p::Ptr{Cvoid}
 end
 GxB_SelectOp() = GxB_SelectOp(C_NULL)

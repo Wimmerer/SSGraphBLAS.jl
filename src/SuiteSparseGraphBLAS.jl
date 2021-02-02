@@ -4,6 +4,12 @@ import Libdl: dlopen_e, dlsym
 using GraphBLASInterface
 using SuiteSparseGraphBLAS_jll: libgraphblas
 
+
+include("builtins/binaryops.jl")
+include("builtins/monoids.jl")
+include("builtins/selectops.jl")
+include("builtins/semirings.jl")
+include("builtins/unaryops.jl")
 include("structures.jl")
 include("global_variables.jl")
 include("utils.jl")
@@ -19,7 +25,14 @@ function __init__()
     global graphblas_lib = dlopen_e(libgraphblas)
 
     function load_global(str)
-        x = dlsym(graphblas_lib, str)
+        x =
+        try
+            dlsym(graphblas_lib, str)
+        catch
+            print("Symbol not available: " * str * "\n")
+            return C_NULL
+        end
+        
         return unsafe_load(cglobal(x, Ptr{Cvoid}))
     end
 
