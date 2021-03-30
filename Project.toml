@@ -8,7 +8,7 @@ GraphBLASInterface = "5f047416-9681-11e9-0804-033d9936201f"
 Libdl = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
 Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
 QuickTypes = "ae2dfa86-617c-530c-b392-ef20fdad97bb"
-SuiteSparseGraphBLAS_jll = "44cc8b2a-fe03-5802-9b90-2102cf0b4e7e"
+SSGraphBLAS_jll = "7ed9a814-9cab-54e9-8e9e-d9e95b4d61b1"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [compat]

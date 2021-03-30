@@ -2,7 +2,7 @@ module SuiteSparseGraphBLAS
 
 import Libdl: dlopen_e, dlsym
 using GraphBLASInterface
-using SuiteSparseGraphBLAS_jll: libgraphblas
+using SSGraphBLAS: libgraphblas
 
 
 include("builtins/binaryops.jl")

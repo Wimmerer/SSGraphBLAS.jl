@@ -1,1328 +1,192 @@
 abstract type Abstract_GrB_UnaryOp end
+@builtinunaryop("GrB_IDENTITY")
+@booleanconstant("GrB_IDENTITY")
+@integerconstants("GrB_IDENTITY")
+@unsignedintegerconstants("GrB_IDENTITY")
+@floatconstants("GrB_IDENTITY")
+@complexconstants("GrB_IDENTITY")
+
+@builtinunaryop("GrB_AINV")
+@booleanconstant("GrB_AINV")
+@integerconstants("GrB_AINV")
+@unsignedintegerconstants("GrB_AINV")
+@floatconstants("GrB_AINV")
+@complexconstants("GrB_AINV")
+
+@builtinunaryop("GrB_MINV")
+@booleanconstant("GrB_MINV")
+@integerconstants("GrB_MINV")
+@unsignedintegerconstants("GrB_MINV")
+@floatconstants("GrB_MINV")
+@complexconstants("GrB_MINV")
+
+@builtinunaryop("GxB_LNOT")
+@booleanconstant("GxB_LNOT")
+@integerconstants("GxB_LNOT")
+@unsignedintegerconstants("GxB_LNOT")
+@floatconstants("GxB_LNOT")
+
+@builtinunaryop("GxB_ONE")
+@booleanconstant("GxB_ONE")
+@integerconstants("GxB_ONE")
+@unsignedintegerconstants("GxB_ONE")
+@floatconstants("GxB_ONE")
+@complexconstants("GxB_ONE")
+
+@builtinunaryop("GrB_BNOT")
+@integerconstants("GrB_BNOT")
+@unsignedintegerconstants("GrB_BNOT")
+
+@builtinunaryop("GxB_SQRT")
+@floatconstants("GxB_SQRT")
+@complexconstants("GxB_SQRT")
+
+@builtinunaryop("GxB_LOG")
+@floatconstants("GxB_LOG")
+@complexconstants("GxB_LOG")
+
+@builtinunaryop("GxB_EXP")
+@floatconstants("GxB_EXP")
+@complexconstants("GxB_EXP")
+
+@builtinunaryop("GxB_LOG2")
+@floatconstants("GxB_LOG2")
+@complexconstants("GxB_LOG2")
+
+@builtinunaryop("GxB_SIN")
+@floatconstants("GxB_SIN")
+@complexconstants("GxB_SIN")
+
+@builtinunaryop("GxB_COS")
+@floatconstants("GxB_COS")
+@complexconstants("GxB_COS")
+
+@builtinunaryop("GxB_TAN")
+@floatconstants("GxB_TAN")
+@complexconstants("GxB_TAN")
+
+@builtinunaryop("GxB_ACOS")
+@floatconstants("GxB_ACOS")
+@complexconstants("GxB_ACOS")
+
+@builtinunaryop("GxB_ASIN")
+@floatconstants("GxB_ASIN")
+@complexconstants("GxB_ASIN")
+
+@builtinunaryop("GxB_ATAN")
+@floatconstants("GxB_ATAN")
+@complexconstants("GxB_ATAN")
+
+@builtinunaryop("GxB_SINH")
+@floatconstants("GxB_SINH")
+@complexconstants("GxB_SINH")
+
+@builtinunaryop("GxB_COSH")
+@floatconstants("GxB_COSH")
+@complexconstants("GxB_COSH")
+
+@builtinunaryop("GxB_TANH")
+@floatconstants("GxB_TANH")
+@complexconstants("GxB_TANH")
+
+@builtinunaryop("GxB_ASINH")
+@floatconstants("GxB_ASINH")
+@complexconstants("GxB_ASINH")
+
+@builtinunaryop("GxB_ACOSH")
+@floatconstants("GxB_ACOSH")
+@complexconstants("GxB_ACOSH")
+
+@builtinunaryop("GxB_ATANH")
+@floatconstants("GxB_ATANH")
+@complexconstants("GxB_ATANH")
 
-mutable struct _GrB_IDENTITY_BOOL <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_IDENTITY_BOOL() = _GrB_IDENTITY_BOOL(C_NULL)
-const GrB_IDENTITY_BOOL = _GrB_IDENTITY_BOOL()
-
-mutable struct _GrB_AINV_BOOL <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_AINV_BOOL() = _GrB_AINV_BOOL(C_NULL)
-const GrB_AINV_BOOL = _GrB_AINV_BOOL()
-
-mutable struct _GrB_MINV_BOOL <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_MINV_BOOL() = _GrB_MINV_BOOL(C_NULL)
-const GrB_MINV_BOOL = _GrB_MINV_BOOL()
-
-mutable struct _GxB_LNOT_BOOL <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LNOT_BOOL() = _GxB_LNOT_BOOL(C_NULL)
-const GxB_LNOT_BOOL = _GxB_LNOT_BOOL()
-
-mutable struct _GrB_IDENTITY_INT8 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_IDENTITY_INT8() = _GrB_IDENTITY_INT8(C_NULL)
-const GrB_IDENTITY_INT8 = _GrB_IDENTITY_INT8()
-
-mutable struct _GrB_AINV_INT8 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_AINV_INT8() = _GrB_AINV_INT8(C_NULL)
-const GrB_AINV_INT8 = _GrB_AINV_INT8()
-
-mutable struct _GrB_MINV_INT8 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_MINV_INT8() = _GrB_MINV_INT8(C_NULL)
-const GrB_MINV_INT8 = _GrB_MINV_INT8()
-
-mutable struct _GxB_LNOT_INT8 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LNOT_INT8() = _GxB_LNOT_INT8(C_NULL)
-const GxB_LNOT_INT8 = _GxB_LNOT_INT8()
-
-mutable struct _GrB_IDENTITY_INT16 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_IDENTITY_INT16() = _GrB_IDENTITY_INT16(C_NULL)
-const GrB_IDENTITY_INT16 = _GrB_IDENTITY_INT16()
-
-mutable struct _GrB_AINV_INT16 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_AINV_INT16() = _GrB_AINV_INT16(C_NULL)
-const GrB_AINV_INT16 = _GrB_AINV_INT16()
-
-mutable struct _GrB_MINV_INT16 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_MINV_INT16() = _GrB_MINV_INT16(C_NULL)
-const GrB_MINV_INT16 = _GrB_MINV_INT16()
-
-mutable struct _GxB_LNOT_INT16 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LNOT_INT16() = _GxB_LNOT_INT16(C_NULL)
-const GxB_LNOT_INT16 = _GxB_LNOT_INT16()
-
-mutable struct _GrB_IDENTITY_INT32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_IDENTITY_INT32() = _GrB_IDENTITY_INT32(C_NULL)
-const GrB_IDENTITY_INT32 = _GrB_IDENTITY_INT32()
-
-mutable struct _GrB_AINV_INT32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_AINV_INT32() = _GrB_AINV_INT32(C_NULL)
-const GrB_AINV_INT32 = _GrB_AINV_INT32()
-
-mutable struct _GrB_MINV_INT32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_MINV_INT32() = _GrB_MINV_INT32(C_NULL)
-const GrB_MINV_INT32 = _GrB_MINV_INT32()
-
-mutable struct _GxB_LNOT_INT32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LNOT_INT32() = _GxB_LNOT_INT32(C_NULL)
-const GxB_LNOT_INT32 = _GxB_LNOT_INT32()
-
-mutable struct _GrB_IDENTITY_INT64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_IDENTITY_INT64() = _GrB_IDENTITY_INT64(C_NULL)
-const GrB_IDENTITY_INT64 = _GrB_IDENTITY_INT64()
-
-mutable struct _GrB_AINV_INT64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_AINV_INT64() = _GrB_AINV_INT64(C_NULL)
-const GrB_AINV_INT64 = _GrB_AINV_INT64()
-
-mutable struct _GrB_MINV_INT64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_MINV_INT64() = _GrB_MINV_INT64(C_NULL)
-const GrB_MINV_INT64 = _GrB_MINV_INT64()
-
-mutable struct _GxB_LNOT_INT64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LNOT_INT64() = _GxB_LNOT_INT64(C_NULL)
-const GxB_LNOT_INT64 = _GxB_LNOT_INT64()
-
-mutable struct _GrB_IDENTITY_UINT8 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_IDENTITY_UINT8() = _GrB_IDENTITY_UINT8(C_NULL)
-const GrB_IDENTITY_UINT8 = _GrB_IDENTITY_UINT8()
-
-mutable struct _GrB_AINV_UINT8 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_AINV_UINT8() = _GrB_AINV_UINT8(C_NULL)
-const GrB_AINV_UINT8 = _GrB_AINV_UINT8()
-
-mutable struct _GrB_MINV_UINT8 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_MINV_UINT8() = _GrB_MINV_UINT8(C_NULL)
-const GrB_MINV_UINT8 = _GrB_MINV_UINT8()
-
-mutable struct _GxB_LNOT_UINT8 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LNOT_UINT8() = _GxB_LNOT_UINT8(C_NULL)
-const GxB_LNOT_UINT8 = _GxB_LNOT_UINT8()
-
-mutable struct _GrB_IDENTITY_UINT16 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_IDENTITY_UINT16() = _GrB_IDENTITY_UINT16(C_NULL)
-const GrB_IDENTITY_UINT16 = _GrB_IDENTITY_UINT16()
-
-mutable struct _GrB_AINV_UINT16 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_AINV_UINT16() = _GrB_AINV_UINT16(C_NULL)
-const GrB_AINV_UINT16 = _GrB_AINV_UINT16()
-
-mutable struct _GrB_MINV_UINT16 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_MINV_UINT16() = _GrB_MINV_UINT16(C_NULL)
-const GrB_MINV_UINT16 = _GrB_MINV_UINT16()
-
-mutable struct _GxB_LNOT_UINT16 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LNOT_UINT16() = _GxB_LNOT_UINT16(C_NULL)
-const GxB_LNOT_UINT16 = _GxB_LNOT_UINT16()
-
-mutable struct _GrB_IDENTITY_UINT32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_IDENTITY_UINT32() = _GrB_IDENTITY_UINT32(C_NULL)
-const GrB_IDENTITY_UINT32 = _GrB_IDENTITY_UINT32()
-
-mutable struct _GrB_AINV_UINT32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_AINV_UINT32() = _GrB_AINV_UINT32(C_NULL)
-const GrB_AINV_UINT32 = _GrB_AINV_UINT32()
-
-mutable struct _GrB_MINV_UINT32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_MINV_UINT32() = _GrB_MINV_UINT32(C_NULL)
-const GrB_MINV_UINT32 = _GrB_MINV_UINT32()
-
-mutable struct _GxB_LNOT_UINT32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LNOT_UINT32() = _GxB_LNOT_UINT32(C_NULL)
-const GxB_LNOT_UINT32 = _GxB_LNOT_UINT32()
-
-mutable struct _GrB_IDENTITY_UINT64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_IDENTITY_UINT64() = _GrB_IDENTITY_UINT64(C_NULL)
-const GrB_IDENTITY_UINT64 = _GrB_IDENTITY_UINT64()
-
-mutable struct _GrB_AINV_UINT64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_AINV_UINT64() = _GrB_AINV_UINT64(C_NULL)
-const GrB_AINV_UINT64 = _GrB_AINV_UINT64()
-
-mutable struct _GrB_MINV_UINT64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_MINV_UINT64() = _GrB_MINV_UINT64(C_NULL)
-const GrB_MINV_UINT64 = _GrB_MINV_UINT64()
-
-mutable struct _GxB_LNOT_UINT64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LNOT_UINT64() = _GxB_LNOT_UINT64(C_NULL)
-const GxB_LNOT_UINT64 = _GxB_LNOT_UINT64()
-
-mutable struct _GrB_IDENTITY_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_IDENTITY_FP32() = _GrB_IDENTITY_FP32(C_NULL)
-const GrB_IDENTITY_FP32 = _GrB_IDENTITY_FP32()
-
-mutable struct _GrB_AINV_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_AINV_FP32() = _GrB_AINV_FP32(C_NULL)
-const GrB_AINV_FP32 = _GrB_AINV_FP32()
-
-mutable struct _GrB_MINV_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_MINV_FP32() = _GrB_MINV_FP32(C_NULL)
-const GrB_MINV_FP32 = _GrB_MINV_FP32()
-
-mutable struct _GxB_LNOT_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LNOT_FP32() = _GxB_LNOT_FP32(C_NULL)
-const GxB_LNOT_FP32 = _GxB_LNOT_FP32()
-
-mutable struct _GrB_IDENTITY_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_IDENTITY_FP64() = _GrB_IDENTITY_FP64(C_NULL)
-const GrB_IDENTITY_FP64 = _GrB_IDENTITY_FP64()
-
-mutable struct _GrB_AINV_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_AINV_FP64() = _GrB_AINV_FP64(C_NULL)
-const GrB_AINV_FP64 = _GrB_AINV_FP64()
-
-mutable struct _GrB_MINV_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_MINV_FP64() = _GrB_MINV_FP64(C_NULL)
-const GrB_MINV_FP64 = _GrB_MINV_FP64()
-
-mutable struct _GxB_LNOT_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LNOT_FP64() = _GxB_LNOT_FP64(C_NULL)
-const GxB_LNOT_FP64 = _GxB_LNOT_FP64()
-
-mutable struct _GxB_IDENTITY_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_IDENTITY_FC32() = _GxB_IDENTITY_FC32(C_NULL)
-const GxB_IDENTITY_FC32 = _GxB_IDENTITY_FC32()
-
-mutable struct _GxB_AINV_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_AINV_FC32() = _GxB_AINV_FC32(C_NULL)
-const GxB_AINV_FC32 = _GxB_AINV_FC32()
-
-mutable struct _GxB_MINV_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_MINV_FC32() = _GxB_MINV_FC32(C_NULL)
-const GxB_MINV_FC32 = _GxB_MINV_FC32()
-
-mutable struct _GxB_IDENTITY_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_IDENTITY_FC64() = _GxB_IDENTITY_FC64(C_NULL)
-const GxB_IDENTITY_FC64 = _GxB_IDENTITY_FC64()
-
-mutable struct _GxB_AINV_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_AINV_FC64() = _GxB_AINV_FC64(C_NULL)
-const GxB_AINV_FC64 = _GxB_AINV_FC64()
-
-mutable struct _GxB_MINV_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_MINV_FC64() = _GxB_MINV_FC64(C_NULL)
-const GxB_MINV_FC64 = _GxB_MINV_FC64()
-
-mutable struct _GxB_ONE_BOOL <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ONE_BOOL() = _GxB_ONE_BOOL(C_NULL)
-const GxB_ONE_BOOL = _GxB_ONE_BOOL()
-
-mutable struct _GrB_ABS_BOOL <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_ABS_BOOL() = _GrB_ABS_BOOL(C_NULL)
-const GrB_ABS_BOOL = _GrB_ABS_BOOL()
-
-mutable struct _GxB_ONE_INT8 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ONE_INT8() = _GxB_ONE_INT8(C_NULL)
-const GxB_ONE_INT8 = _GxB_ONE_INT8()
-
-mutable struct _GrB_ABS_INT8 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_ABS_INT8() = _GrB_ABS_INT8(C_NULL)
-const GrB_ABS_INT8 = _GrB_ABS_INT8()
-
-mutable struct _GrB_BNOT_INT8 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_BNOT_INT8() = _GrB_BNOT_INT8(C_NULL)
-const GrB_BNOT_INT8 = _GrB_BNOT_INT8()
-
-mutable struct _GxB_ONE_INT16 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ONE_INT16() = _GxB_ONE_INT16(C_NULL)
-const GxB_ONE_INT16 = _GxB_ONE_INT16()
-
-mutable struct _GrB_ABS_INT16 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_ABS_INT16() = _GrB_ABS_INT16(C_NULL)
-const GrB_ABS_INT16 = _GrB_ABS_INT16()
-
-mutable struct _GrB_BNOT_INT16 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_BNOT_INT16() = _GrB_BNOT_INT16(C_NULL)
-const GrB_BNOT_INT16 = _GrB_BNOT_INT16()
-
-mutable struct _GxB_ONE_INT32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ONE_INT32() = _GxB_ONE_INT32(C_NULL)
-const GxB_ONE_INT32 = _GxB_ONE_INT32()
-
-mutable struct _GrB_ABS_INT32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_ABS_INT32() = _GrB_ABS_INT32(C_NULL)
-const GrB_ABS_INT32 = _GrB_ABS_INT32()
-
-mutable struct _GrB_BNOT_INT32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_BNOT_INT32() = _GrB_BNOT_INT32(C_NULL)
-const GrB_BNOT_INT32 = _GrB_BNOT_INT32()
-
-mutable struct _GxB_ONE_INT64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ONE_INT64() = _GxB_ONE_INT64(C_NULL)
-const GxB_ONE_INT64 = _GxB_ONE_INT64()
-
-mutable struct _GrB_ABS_INT64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_ABS_INT64() = _GrB_ABS_INT64(C_NULL)
-const GrB_ABS_INT64 = _GrB_ABS_INT64()
-
-mutable struct _GrB_BNOT_INT64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_BNOT_INT64() = _GrB_BNOT_INT64(C_NULL)
-const GrB_BNOT_INT64 = _GrB_BNOT_INT64()
-
-mutable struct _GxB_ONE_UINT8 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ONE_UINT8() = _GxB_ONE_UINT8(C_NULL)
-const GxB_ONE_UINT8 = _GxB_ONE_UINT8()
-
-mutable struct _GrB_ABS_UINT8 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_ABS_UINT8() = _GrB_ABS_UINT8(C_NULL)
-const GrB_ABS_UINT8 = _GrB_ABS_UINT8()
-
-mutable struct _GrB_BNOT_UINT8 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_BNOT_UINT8() = _GrB_BNOT_UINT8(C_NULL)
-const GrB_BNOT_UINT8 = _GrB_BNOT_UINT8()
-
-mutable struct _GxB_ONE_UINT16 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ONE_UINT16() = _GxB_ONE_UINT16(C_NULL)
-const GxB_ONE_UINT16 = _GxB_ONE_UINT16()
-
-mutable struct _GrB_ABS_UINT16 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_ABS_UINT16() = _GrB_ABS_UINT16(C_NULL)
-const GrB_ABS_UINT16 = _GrB_ABS_UINT16()
-
-mutable struct _GrB_BNOT_UINT16 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_BNOT_UINT16() = _GrB_BNOT_UINT16(C_NULL)
-const GrB_BNOT_UINT16 = _GrB_BNOT_UINT16()
-
-mutable struct _GxB_ONE_UINT32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ONE_UINT32() = _GxB_ONE_UINT32(C_NULL)
-const GxB_ONE_UINT32 = _GxB_ONE_UINT32()
-
-mutable struct _GrB_ABS_UINT32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_ABS_UINT32() = _GrB_ABS_UINT32(C_NULL)
-const GrB_ABS_UINT32 = _GrB_ABS_UINT32()
-
-mutable struct _GrB_BNOT_UINT32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_BNOT_UINT32() = _GrB_BNOT_UINT32(C_NULL)
-const GrB_BNOT_UINT32 = _GrB_BNOT_UINT32()
-
-mutable struct _GxB_ONE_UINT64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ONE_UINT64() = _GxB_ONE_UINT64(C_NULL)
-const GxB_ONE_UINT64 = _GxB_ONE_UINT64()
-
-mutable struct _GrB_ABS_UINT64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_ABS_UINT64() = _GrB_ABS_UINT64(C_NULL)
-const GrB_ABS_UINT64 = _GrB_ABS_UINT64()
-
-mutable struct _GrB_BNOT_UINT64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_BNOT_UINT64() = _GrB_BNOT_UINT64(C_NULL)
-const GrB_BNOT_UINT64 = _GrB_BNOT_UINT64()
-
-mutable struct _GxB_ONE_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ONE_FP32() = _GxB_ONE_FP32(C_NULL)
-const GxB_ONE_FP32 = _GxB_ONE_FP32()
-
-mutable struct _GrB_ABS_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_ABS_FP32() = _GrB_ABS_FP32(C_NULL)
-const GrB_ABS_FP32 = _GrB_ABS_FP32()
-
-mutable struct _GxB_ONE_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ONE_FP64() = _GxB_ONE_FP64(C_NULL)
-const GxB_ONE_FP64 = _GxB_ONE_FP64()
-
-mutable struct _GrB_ABS_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_ABS_FP64() = _GrB_ABS_FP64(C_NULL)
-const GrB_ABS_FP64 = _GrB_ABS_FP64()
-
-mutable struct _GxB_ONE_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ONE_FC32() = _GxB_ONE_FC32(C_NULL)
-const GxB_ONE_FC32 = _GxB_ONE_FC32()
-
-mutable struct _GxB_ONE_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ONE_FC64() = _GxB_ONE_FC64(C_NULL)
-const GxB_ONE_FC64 = _GxB_ONE_FC64()
-
-mutable struct _GrB_LNOT <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GrB_LNOT() = _GrB_LNOT(C_NULL)
-const GrB_LNOT = _GrB_LNOT()
-
-mutable struct _GxB_SQRT_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_SQRT_FP64() = _GxB_SQRT_FP64(C_NULL)
-const GxB_SQRT_FP64 = _GxB_SQRT_FP64()
-
-mutable struct _GxB_LOG_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LOG_FP64() = _GxB_LOG_FP64(C_NULL)
-const GxB_LOG_FP64 = _GxB_LOG_FP64()
-
-mutable struct _GxB_EXP_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_EXP_FP64() = _GxB_EXP_FP64(C_NULL)
-const GxB_EXP_FP64 = _GxB_EXP_FP64()
-
-mutable struct _GxB_LOG2_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LOG2_FP64() = _GxB_LOG2_FP64(C_NULL)
-const GxB_LOG2_FP64 = _GxB_LOG2_FP64()
-
-mutable struct _GxB_SQRT_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_SQRT_FC32() = _GxB_SQRT_FC32(C_NULL)
-const GxB_SQRT_FC32 = _GxB_SQRT_FC32()
-
-mutable struct _GxB_LOG_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LOG_FC32() = _GxB_LOG_FC32(C_NULL)
-const GxB_LOG_FC32 = _GxB_LOG_FC32()
-
-mutable struct _GxB_EXP_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_EXP_FC32() = _GxB_EXP_FC32(C_NULL)
-const GxB_EXP_FC32 = _GxB_EXP_FC32()
-
-mutable struct _GxB_LOG2_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LOG2_FC32() = _GxB_LOG2_FC32(C_NULL)
-const GxB_LOG2_FC32 = _GxB_LOG2_FC32()
-
-mutable struct _GxB_SQRT_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_SQRT_FC64() = _GxB_SQRT_FC64(C_NULL)
-const GxB_SQRT_FC64 = _GxB_SQRT_FC64()
-
-mutable struct _GxB_LOG_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LOG_FC64() = _GxB_LOG_FC64(C_NULL)
-const GxB_LOG_FC64 = _GxB_LOG_FC64()
-
-mutable struct _GxB_EXP_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_EXP_FC64() = _GxB_EXP_FC64(C_NULL)
-const GxB_EXP_FC64 = _GxB_EXP_FC64()
-
-mutable struct _GxB_LOG2_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LOG2_FC64() = _GxB_LOG2_FC64(C_NULL)
-const GxB_LOG2_FC64 = _GxB_LOG2_FC64()
-
-mutable struct _GxB_SIN_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_SIN_FP32() = _GxB_SIN_FP32(C_NULL)
-const GxB_SIN_FP32 = _GxB_SIN_FP32()
-
-mutable struct _GxB_COS_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_COS_FP32() = _GxB_COS_FP32(C_NULL)
-const GxB_COS_FP32 = _GxB_COS_FP32()
-
-mutable struct _GxB_TAN_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_TAN_FP32() = _GxB_TAN_FP32(C_NULL)
-const GxB_TAN_FP32 = _GxB_TAN_FP32()
-
-mutable struct _GxB_SIN_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_SIN_FP64() = _GxB_SIN_FP64(C_NULL)
-const GxB_SIN_FP64 = _GxB_SIN_FP64()
-
-mutable struct _GxB_COS_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_COS_FP64() = _GxB_COS_FP64(C_NULL)
-const GxB_COS_FP64 = _GxB_COS_FP64()
-
-mutable struct _GxB_TAN_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_TAN_FP64() = _GxB_TAN_FP64(C_NULL)
-const GxB_TAN_FP64 = _GxB_TAN_FP64()
-
-mutable struct _GxB_SIN_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_SIN_FC32() = _GxB_SIN_FC32(C_NULL)
-const GxB_SIN_FC32 = _GxB_SIN_FC32()
-
-mutable struct _GxB_COS_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_COS_FC32() = _GxB_COS_FC32(C_NULL)
-const GxB_COS_FC32 = _GxB_COS_FC32()
-
-mutable struct _GxB_TAN_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_TAN_FC32() = _GxB_TAN_FC32(C_NULL)
-const GxB_TAN_FC32 = _GxB_TAN_FC32()
-
-mutable struct _GxB_SIN_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_SIN_FC64() = _GxB_SIN_FC64(C_NULL)
-const GxB_SIN_FC64 = _GxB_SIN_FC64()
-
-mutable struct _GxB_COS_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_COS_FC64() = _GxB_COS_FC64(C_NULL)
-const GxB_COS_FC64 = _GxB_COS_FC64()
-
-mutable struct _GxB_TAN_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_TAN_FC64() = _GxB_TAN_FC64(C_NULL)
-const GxB_TAN_FC64 = _GxB_TAN_FC64()
-
-mutable struct _GxB_ACOS_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ACOS_FP32() = _GxB_ACOS_FP32(C_NULL)
-const GxB_ACOS_FP32 = _GxB_ACOS_FP32()
-
-mutable struct _GxB_ASIN_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ASIN_FP32() = _GxB_ASIN_FP32(C_NULL)
-const GxB_ASIN_FP32 = _GxB_ASIN_FP32()
-
-mutable struct _GxB_ATAN_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ATAN_FP32() = _GxB_ATAN_FP32(C_NULL)
-const GxB_ATAN_FP32 = _GxB_ATAN_FP32()
-
-mutable struct _GxB_ACOS_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ACOS_FP64() = _GxB_ACOS_FP64(C_NULL)
-const GxB_ACOS_FP64 = _GxB_ACOS_FP64()
-
-mutable struct _GxB_ASIN_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ASIN_FP64() = _GxB_ASIN_FP64(C_NULL)
-const GxB_ASIN_FP64 = _GxB_ASIN_FP64()
-
-mutable struct _GxB_ATAN_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ATAN_FP64() = _GxB_ATAN_FP64(C_NULL)
-const GxB_ATAN_FP64 = _GxB_ATAN_FP64()
-
-mutable struct _GxB_ACOS_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ACOS_FC32() = _GxB_ACOS_FC32(C_NULL)
-const GxB_ACOS_FC32 = _GxB_ACOS_FC32()
-
-mutable struct _GxB_ASIN_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ASIN_FC32() = _GxB_ASIN_FC32(C_NULL)
-const GxB_ASIN_FC32 = _GxB_ASIN_FC32()
-
-mutable struct _GxB_ATAN_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ATAN_FC32() = _GxB_ATAN_FC32(C_NULL)
-const GxB_ATAN_FC32 = _GxB_ATAN_FC32()
-
-mutable struct _GxB_ACOS_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ACOS_FC64() = _GxB_ACOS_FC64(C_NULL)
-const GxB_ACOS_FC64 = _GxB_ACOS_FC64()
-
-mutable struct _GxB_ASIN_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ASIN_FC64() = _GxB_ASIN_FC64(C_NULL)
-const GxB_ASIN_FC64 = _GxB_ASIN_FC64()
-
-mutable struct _GxB_ATAN_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ATAN_FC64() = _GxB_ATAN_FC64(C_NULL)
-const GxB_ATAN_FC64 = _GxB_ATAN_FC64()
-
-mutable struct _GxB_SINH_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_SINH_FP32() = _GxB_SINH_FP32(C_NULL)
-const GxB_SINH_FP32 = _GxB_SINH_FP32()
-
-mutable struct _GxB_COSH_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_COSH_FP32() = _GxB_COSH_FP32(C_NULL)
-const GxB_COSH_FP32 = _GxB_COSH_FP32()
-
-mutable struct _GxB_TANH_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_TANH_FP32() = _GxB_TANH_FP32(C_NULL)
-const GxB_TANH_FP32 = _GxB_TANH_FP32()
-
-mutable struct _GxB_SINH_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_SINH_FP64() = _GxB_SINH_FP64(C_NULL)
-const GxB_SINH_FP64 = _GxB_SINH_FP64()
-
-mutable struct _GxB_COSH_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_COSH_FP64() = _GxB_COSH_FP64(C_NULL)
-const GxB_COSH_FP64 = _GxB_COSH_FP64()
-
-mutable struct _GxB_TANH_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_TANH_FP64() = _GxB_TANH_FP64(C_NULL)
-const GxB_TANH_FP64 = _GxB_TANH_FP64()
-
-mutable struct _GxB_SINH_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_SINH_FC32() = _GxB_SINH_FC32(C_NULL)
-const GxB_SINH_FC32 = _GxB_SINH_FC32()
-
-mutable struct _GxB_COSH_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_COSH_FC32() = _GxB_COSH_FC32(C_NULL)
-const GxB_COSH_FC32 = _GxB_COSH_FC32()
-
-mutable struct _GxB_TANH_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_TANH_FC32() = _GxB_TANH_FC32(C_NULL)
-const GxB_TANH_FC32 = _GxB_TANH_FC32()
-
-mutable struct _GxB_SINH_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_SINH_FC64() = _GxB_SINH_FC64(C_NULL)
-const GxB_SINH_FC64 = _GxB_SINH_FC64()
-
-mutable struct _GxB_COSH_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_COSH_FC64() = _GxB_COSH_FC64(C_NULL)
-const GxB_COSH_FC64 = _GxB_COSH_FC64()
-
-mutable struct _GxB_TANH_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_TANH_FC64() = _GxB_TANH_FC64(C_NULL)
-const GxB_TANH_FC64 = _GxB_TANH_FC64()
-
-mutable struct _GxB_ACOSH_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ACOSH_FP32() = _GxB_ACOSH_FP32(C_NULL)
-const GxB_ACOSH_FP32 = _GxB_ACOSH_FP32()
-
-mutable struct _GxB_ASINH_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ASINH_FP32() = _GxB_ASINH_FP32(C_NULL)
-const GxB_ASINH_FP32 = _GxB_ASINH_FP32()
-
-mutable struct _GxB_ATANH_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ATANH_FP32() = _GxB_ATANH_FP32(C_NULL)
-const GxB_ATANH_FP32 = _GxB_ATANH_FP32()
-
-mutable struct _GxB_SIGNUM_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_SIGNUM_FP32() = _GxB_SIGNUM_FP32(C_NULL)
-const GxB_SIGNUM_FP32 = _GxB_SIGNUM_FP32()
-
-mutable struct _GxB_ACOSH_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ACOSH_FP64() = _GxB_ACOSH_FP64(C_NULL)
-const GxB_ACOSH_FP64 = _GxB_ACOSH_FP64()
-
-mutable struct _GxB_ASINH_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ASINH_FP64() = _GxB_ASINH_FP64(C_NULL)
-const GxB_ASINH_FP64 = _GxB_ASINH_FP64()
-
-mutable struct _GxB_ATANH_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ATANH_FP64() = _GxB_ATANH_FP64(C_NULL)
-const GxB_ATANH_FP64 = _GxB_ATANH_FP64()
-
-mutable struct _GxB_SIGNUM_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_SIGNUM_FP64() = _GxB_SIGNUM_FP64(C_NULL)
-const GxB_SIGNUM_FP64 = _GxB_SIGNUM_FP64()
-
-mutable struct _GxB_ACOSH_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ACOSH_FC32() = _GxB_ACOSH_FC32(C_NULL)
-const GxB_ACOSH_FC32 = _GxB_ACOSH_FC32()
-
-mutable struct _GxB_ASINH_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ASINH_FC32() = _GxB_ASINH_FC32(C_NULL)
-const GxB_ASINH_FC32 = _GxB_ASINH_FC32()
-
-mutable struct _GxB_ATANH_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ATANH_FC32() = _GxB_ATANH_FC32(C_NULL)
-const GxB_ATANH_FC32 = _GxB_ATANH_FC32()
-
-mutable struct _GxB_SIGNUM_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_SIGNUM_FC32() = _GxB_SIGNUM_FC32(C_NULL)
-const GxB_SIGNUM_FC32 = _GxB_SIGNUM_FC32()
-
-mutable struct _GxB_ACOSH_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ACOSH_FC64() = _GxB_ACOSH_FC64(C_NULL)
-const GxB_ACOSH_FC64 = _GxB_ACOSH_FC64()
-
-mutable struct _GxB_ASINH_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ASINH_FC64() = _GxB_ASINH_FC64(C_NULL)
-const GxB_ASINH_FC64 = _GxB_ASINH_FC64()
-
-mutable struct _GxB_ATANH_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ATANH_FC64() = _GxB_ATANH_FC64(C_NULL)
-const GxB_ATANH_FC64 = _GxB_ATANH_FC64()
-
-mutable struct _GxB_SIGNUM_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_SIGNUM_FC64() = _GxB_SIGNUM_FC64(C_NULL)
-const GxB_SIGNUM_FC64 = _GxB_SIGNUM_FC64()
-
-mutable struct _GxB_CEIL_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_CEIL_FP32() = _GxB_CEIL_FP32(C_NULL)
-const GxB_CEIL_FP32 = _GxB_CEIL_FP32()
-
-mutable struct _GxB_FLOOR_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_FLOOR_FP32() = _GxB_FLOOR_FP32(C_NULL)
-const GxB_FLOOR_FP32 = _GxB_FLOOR_FP32()
-
-mutable struct _GxB_ROUND_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ROUND_FP32() = _GxB_ROUND_FP32(C_NULL)
-const GxB_ROUND_FP32 = _GxB_ROUND_FP32()
-
-mutable struct _GxB_TRUNC_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_TRUNC_FP32() = _GxB_TRUNC_FP32(C_NULL)
-const GxB_TRUNC_FP32 = _GxB_TRUNC_FP32()
-
-mutable struct _GxB_CEIL_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_CEIL_FP64() = _GxB_CEIL_FP64(C_NULL)
-const GxB_CEIL_FP64 = _GxB_CEIL_FP64()
-
-mutable struct _GxB_FLOOR_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_FLOOR_FP64() = _GxB_FLOOR_FP64(C_NULL)
-const GxB_FLOOR_FP64 = _GxB_FLOOR_FP64()
-
-mutable struct _GxB_ROUND_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ROUND_FP64() = _GxB_ROUND_FP64(C_NULL)
-const GxB_ROUND_FP64 = _GxB_ROUND_FP64()
-
-mutable struct _GxB_TRUNC_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_TRUNC_FP64() = _GxB_TRUNC_FP64(C_NULL)
-const GxB_TRUNC_FP64 = _GxB_TRUNC_FP64()
-
-mutable struct _GxB_CEIL_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_CEIL_FC32() = _GxB_CEIL_FC32(C_NULL)
-const GxB_CEIL_FC32 = _GxB_CEIL_FC32()
-
-mutable struct _GxB_FLOOR_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_FLOOR_FC32() = _GxB_FLOOR_FC32(C_NULL)
-const GxB_FLOOR_FC32 = _GxB_FLOOR_FC32()
-
-mutable struct _GxB_ROUND_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ROUND_FC32() = _GxB_ROUND_FC32(C_NULL)
-const GxB_ROUND_FC32 = _GxB_ROUND_FC32()
-
-mutable struct _GxB_TRUNC_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_TRUNC_FC32() = _GxB_TRUNC_FC32(C_NULL)
-const GxB_TRUNC_FC32 = _GxB_TRUNC_FC32()
-
-mutable struct _GxB_CEIL_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_CEIL_FC64() = _GxB_CEIL_FC64(C_NULL)
-const GxB_CEIL_FC64 = _GxB_CEIL_FC64()
-
-mutable struct _GxB_FLOOR_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_FLOOR_FC64() = _GxB_FLOOR_FC64(C_NULL)
-const GxB_FLOOR_FC64 = _GxB_FLOOR_FC64()
-
-mutable struct _GxB_ROUND_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ROUND_FC64() = _GxB_ROUND_FC64(C_NULL)
-const GxB_ROUND_FC64 = _GxB_ROUND_FC64()
-
-mutable struct _GxB_TRUNC_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_TRUNC_FC64() = _GxB_TRUNC_FC64(C_NULL)
-const GxB_TRUNC_FC64 = _GxB_TRUNC_FC64()
-
-mutable struct _GxB_EXP2_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_EXP2_FP32() = _GxB_EXP2_FP32(C_NULL)
-const GxB_EXP2_FP32 = _GxB_EXP2_FP32()
-
-mutable struct _GxB_EXPM1_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_EXPM1_FP32() = _GxB_EXPM1_FP32(C_NULL)
-const GxB_EXPM1_FP32 = _GxB_EXPM1_FP32()
-
-mutable struct _GxB_LOG10_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LOG10_FP32() = _GxB_LOG10_FP32(C_NULL)
-const GxB_LOG10_FP32 = _GxB_LOG10_FP32()
-
-mutable struct _GxB_LOG1P_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LOG1P_FP32() = _GxB_LOG1P_FP32(C_NULL)
-const GxB_LOG1P_FP32 = _GxB_LOG1P_FP32()
-
-mutable struct _GxB_EXP2_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_EXP2_FP64() = _GxB_EXP2_FP64(C_NULL)
-const GxB_EXP2_FP64 = _GxB_EXP2_FP64()
-
-mutable struct _GxB_EXPM1_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_EXPM1_FP64() = _GxB_EXPM1_FP64(C_NULL)
-const GxB_EXPM1_FP64 = _GxB_EXPM1_FP64()
-
-mutable struct _GxB_LOG10_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LOG10_FP64() = _GxB_LOG10_FP64(C_NULL)
-const GxB_LOG10_FP64 = _GxB_LOG10_FP64()
-
-mutable struct _GxB_LOG1P_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LOG1P_FP64() = _GxB_LOG1P_FP64(C_NULL)
-const GxB_LOG1P_FP64 = _GxB_LOG1P_FP64()
-
-mutable struct _GxB_EXP2_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_EXP2_FC32() = _GxB_EXP2_FC32(C_NULL)
-const GxB_EXP2_FC32 = _GxB_EXP2_FC32()
-
-mutable struct _GxB_EXPM1_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_EXPM1_FC32() = _GxB_EXPM1_FC32(C_NULL)
-const GxB_EXPM1_FC32 = _GxB_EXPM1_FC32()
-
-mutable struct _GxB_LOG10_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LOG10_FC32() = _GxB_LOG10_FC32(C_NULL)
-const GxB_LOG10_FC32 = _GxB_LOG10_FC32()
-
-mutable struct _GxB_LOG1P_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LOG1P_FC32() = _GxB_LOG1P_FC32(C_NULL)
-const GxB_LOG1P_FC32 = _GxB_LOG1P_FC32()
-
-mutable struct _GxB_EXP2_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_EXP2_FC64() = _GxB_EXP2_FC64(C_NULL)
-const GxB_EXP2_FC64 = _GxB_EXP2_FC64()
-
-mutable struct _GxB_EXPM1_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_EXPM1_FC64() = _GxB_EXPM1_FC64(C_NULL)
-const GxB_EXPM1_FC64 = _GxB_EXPM1_FC64()
-
-mutable struct _GxB_LOG10_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LOG10_FC64() = _GxB_LOG10_FC64(C_NULL)
-const GxB_LOG10_FC64 = _GxB_LOG10_FC64()
-
-mutable struct _GxB_LOG1P_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LOG1P_FC64() = _GxB_LOG1P_FC64(C_NULL)
-const GxB_LOG1P_FC64 = _GxB_LOG1P_FC64()
-
-mutable struct _GxB_LGAMMA_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LGAMMA_FP32() = _GxB_LGAMMA_FP32(C_NULL)
-const GxB_LGAMMA_FP32 = _GxB_LGAMMA_FP32()
-
-mutable struct _GxB_TGAMMA_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_TGAMMA_FP32() = _GxB_TGAMMA_FP32(C_NULL)
-const GxB_TGAMMA_FP32 = _GxB_TGAMMA_FP32()
-
-mutable struct _GxB_ERF_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ERF_FP32() = _GxB_ERF_FP32(C_NULL)
-const GxB_ERF_FP32 = _GxB_ERF_FP32()
-
-mutable struct _GxB_ERFC_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ERFC_FP32() = _GxB_ERFC_FP32(C_NULL)
-const GxB_ERFC_FP32 = _GxB_ERFC_FP32()
-
-mutable struct _GxB_LGAMMA_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_LGAMMA_FP64() = _GxB_LGAMMA_FP64(C_NULL)
-const GxB_LGAMMA_FP64 = _GxB_LGAMMA_FP64()
-
-mutable struct _GxB_TGAMMA_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_TGAMMA_FP64() = _GxB_TGAMMA_FP64(C_NULL)
-const GxB_TGAMMA_FP64 = _GxB_TGAMMA_FP64()
-
-mutable struct _GxB_ERF_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ERF_FP64() = _GxB_ERF_FP64(C_NULL)
-const GxB_ERF_FP64 = _GxB_ERF_FP64()
-
-mutable struct _GxB_ERFC_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ERFC_FP64() = _GxB_ERFC_FP64(C_NULL)
-const GxB_ERFC_FP64 = _GxB_ERFC_FP64()
-
-mutable struct _GxB_FREXPX_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_FREXPX_FP32() = _GxB_FREXPX_FP32(C_NULL)
-const GxB_FREXPX_FP32 = _GxB_FREXPX_FP32()
-
-mutable struct _GxB_FREXPE_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_FREXPE_FP32() = _GxB_FREXPE_FP32(C_NULL)
-const GxB_FREXPE_FP32 = _GxB_FREXPE_FP32()
-
-mutable struct _GxB_FREXPX_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_FREXPX_FP64() = _GxB_FREXPX_FP64(C_NULL)
-const GxB_FREXPX_FP64 = _GxB_FREXPX_FP64()
-
-mutable struct _GxB_FREXPE_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_FREXPE_FP64() = _GxB_FREXPE_FP64(C_NULL)
-const GxB_FREXPE_FP64 = _GxB_FREXPE_FP64()
-
-mutable struct _GxB_CONJ_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_CONJ_FC32() = _GxB_CONJ_FC32(C_NULL)
-const GxB_CONJ_FC32 = _GxB_CONJ_FC32()
-
-mutable struct _GxB_CONJ_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_CONJ_FC64() = _GxB_CONJ_FC64(C_NULL)
-const GxB_CONJ_FC64 = _GxB_CONJ_FC64()
-
-mutable struct _GxB_CREAL_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_CREAL_FC32() = _GxB_CREAL_FC32(C_NULL)
-const GxB_CREAL_FC32 = _GxB_CREAL_FC32()
-
-mutable struct _GxB_CIMAG_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_CIMAG_FC32() = _GxB_CIMAG_FC32(C_NULL)
-const GxB_CIMAG_FC32 = _GxB_CIMAG_FC32()
-
-mutable struct _GxB_CARG_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_CARG_FC32() = _GxB_CARG_FC32(C_NULL)
-const GxB_CARG_FC32 = _GxB_CARG_FC32()
-
-mutable struct _GxB_ABS_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ABS_FC32() = _GxB_ABS_FC32(C_NULL)
-const GxB_ABS_FC32 = _GxB_ABS_FC32()
-
-mutable struct _GxB_CREAL_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_CREAL_FC64() = _GxB_CREAL_FC64(C_NULL)
-const GxB_CREAL_FC64 = _GxB_CREAL_FC64()
-
-mutable struct _GxB_CIMAG_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_CIMAG_FC64() = _GxB_CIMAG_FC64(C_NULL)
-const GxB_CIMAG_FC64 = _GxB_CIMAG_FC64()
-
-mutable struct _GxB_CARG_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_CARG_FC64() = _GxB_CARG_FC64(C_NULL)
-const GxB_CARG_FC64 = _GxB_CARG_FC64()
-
-mutable struct _GxB_ABS_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ABS_FC64() = _GxB_ABS_FC64(C_NULL)
-const GxB_ABS_FC64 = _GxB_ABS_FC64()
-
-mutable struct _GxB_ISINF_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ISINF_FP32() = _GxB_ISINF_FP32(C_NULL)
-const GxB_ISINF_FP32 = _GxB_ISINF_FP32()
-
-mutable struct _GxB_ISINF_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ISINF_FP64() = _GxB_ISINF_FP64(C_NULL)
-const GxB_ISINF_FP64 = _GxB_ISINF_FP64()
-
-mutable struct _GxB_ISINF_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ISINF_FC32() = _GxB_ISINF_FC32(C_NULL)
-const GxB_ISINF_FC32 = _GxB_ISINF_FC32()
-
-mutable struct _GxB_ISINF_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ISINF_FC64() = _GxB_ISINF_FC64(C_NULL)
-const GxB_ISINF_FC64 = _GxB_ISINF_FC64()
-
-mutable struct _GxB_ISNAN_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ISNAN_FP32() = _GxB_ISNAN_FP32(C_NULL)
-const GxB_ISNAN_FP32 = _GxB_ISNAN_FP32()
-
-mutable struct _GxB_ISNAN_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ISNAN_FP64() = _GxB_ISNAN_FP64(C_NULL)
-const GxB_ISNAN_FP64 = _GxB_ISNAN_FP64()
-
-mutable struct _GxB_ISNAN_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ISNAN_FC32() = _GxB_ISNAN_FC32(C_NULL)
-const GxB_ISNAN_FC32 = _GxB_ISNAN_FC32()
-
-mutable struct _GxB_ISNAN_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ISNAN_FC64() = _GxB_ISNAN_FC64(C_NULL)
-const GxB_ISNAN_FC64 = _GxB_ISNAN_FC64()
-
-mutable struct _GxB_ISFINITE_FP32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ISFINITE_FP32() = _GxB_ISFINITE_FP32(C_NULL)
-const GxB_ISFINITE_FP32 = _GxB_ISFINITE_FP32()
-
-mutable struct _GxB_ISFINITE_FP64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ISFINITE_FP64() = _GxB_ISFINITE_FP64(C_NULL)
-const GxB_ISFINITE_FP64 = _GxB_ISFINITE_FP64()
-
-mutable struct _GxB_ISFINITE_FC32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ISFINITE_FC32() = _GxB_ISFINITE_FC32(C_NULL)
-const GxB_ISFINITE_FC32 = _GxB_ISFINITE_FC32()
-
-mutable struct _GxB_ISFINITE_FC64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_ISFINITE_FC64() = _GxB_ISFINITE_FC64(C_NULL)
-const GxB_ISFINITE_FC64 = _GxB_ISFINITE_FC64()
-
-
-mutable struct _GxB_POSITIONI_INT32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_POSITIONI_INT32() = _GxB_POSITIONI_INT32(C_NULL)
-const GxB_POSITIONI_INT32 = _GxB_POSITIONI_INT32()
-
-mutable struct _GxB_POSITIONI_INT64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_POSITIONI_INT64() = _GxB_POSITIONI_INT64(C_NULL)
-const GxB_POSITIONI_INT64 = _GxB_POSITIONI_INT64()
-
-mutable struct _GxB_POSITIONI1_INT32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_POSITIONI1_INT32() = _GxB_POSITIONI1_INT32(C_NULL)
-const GxB_POSITIONI1_INT32 = _GxB_POSITIONI1_INT32()
-
-mutable struct _GxB_POSITIONI1_INT64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_POSITIONI1_INT64() = _GxB_POSITIONI1_INT64(C_NULL)
-const GxB_POSITIONI1_INT64 = _GxB_POSITIONI1_INT64()
-
-mutable struct _GxB_POSITIONJ_INT32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_POSITIONJ_INT32() = _GxB_POSITIONJ_INT32(C_NULL)
-const GxB_POSITIONJ_INT32 = _GxB_POSITIONJ_INT32()
-
-mutable struct _GxB_POSITIONJ_INT64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_POSITIONJ_INT64() = _GxB_POSITIONJ_INT64(C_NULL)
-const GxB_POSITIONJ_INT64 = _GxB_POSITIONJ_INT64()
-
-mutable struct _GxB_POSITIONJ1_INT32 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_POSITIONJ1_INT32() = _GxB_POSITIONJ1_INT32(C_NULL)
-const GxB_POSITIONJ1_INT32 = _GxB_POSITIONJ1_INT32()
-
-mutable struct _GxB_POSITIONJ1_INT64 <: Abstract_GrB_UnaryOp
-    p::Ptr{Cvoid}
-end
-_GxB_POSITIONJ1_INT64() = _GxB_POSITIONJ1_INT64(C_NULL)
-const GxB_POSITIONJ1_INT64 = _GxB_POSITIONJ1_INT64()
+@builtinunaryop("GxB_SIGNUM")
+@floatconstants("GxB_SIGNUM")
+@complexconstants("GxB_SIGNUM")
+
+@builtinunaryop("GxB_CEIL")
+@floatconstants("GxB_CEIL")
+@complexconstants("GxB_CEIL")
+
+@builtinunaryop("GxB_FLOOR")
+@floatconstants("GxB_FLOOR")
+@complexconstants("GxB_FLOOR")
+
+@builtinunaryop("GxB_ROUND")
+@floatconstants("GxB_ROUND")
+@complexconstants("GxB_ROUND")
+
+@builtinunaryop("GxB_TRUNC")
+@floatconstants("GxB_TRUNC")
+@complexconstants("GxB_TRUNC")
+
+@builtinunaryop("GxB_EXP2")
+@floatconstants("GxB_EXP2")
+@complexconstants("GxB_EXP2")
+
+@builtinunaryop("GxB_EXPM1")
+@floatconstants("GxB_EXPM1")
+@complexconstants("GxB_EXPM1")
+
+@builtinunaryop("GxB_LOG10")
+@floatconstants("GxB_LOG10")
+@complexconstants("GxB_LOG10")
+
+@builtinunaryop("GxB_LOG1P")
+@floatconstants("GxB_LOG1P")
+@complexconstants("GxB_LOG1P")
+
+@builtinunaryop("GxB_LGAMMA")
+@floatconstants("GxB_LGAMMA")
+
+@builtinunaryop("GxB_TGAMMA")
+@floatconstants("GxB_TGAMMA")
+
+@builtinunaryop("GxB_ERF")
+@floatconstants("GxB_ERF")
+
+@builtinunaryop("GxB_ERFC")
+@floatconstants("GxB_ERFC")
+
+@builtinunaryop("GxB_FREXPE")
+@floatconstants("GxB_FREXPE")
+
+@builtinunaryop("GxB_CONJ")
+@complexconstants("GxB_CONJ")
+
+@builtinunaryop("GxB_CREAL")
+@complexconstants("GxB_CREAL")
+
+@builtinunaryop("GxB_CIMAG")
+@complexconstants("GxB_CIMAG")
+
+@builtinunaryop("GxB_CARG")
+@complexconstants("GxB_CARG")
+
+@builtinunaryop("GxB_ABS")
+@complexconstants("GxB_ABS")
+
+@builtinunaryop("GxB_ISINF")
+@floatconstants("GxB_ISINF")
+@complexconstants("GxB_ISINF")
+
+@builtinunaryop("GxB_ISNAN")
+@floatconstants("GxB_ISNAN")
+@complexconstants("GxB_ISNAN")
+
+@builtinunaryop("GxB_ISFINITE")
+@floatconstants("GxB_ISFINITE")
+@complexconstants("GxB_ISFINITE")
+
+@builtinunaryop("GxB_POSITIONI")
+@positionalconstants("GxB_POSITIONI")
+
+@builtinunaryop("GxB_POSITIONI1")
+@positionalconstants("GxB_POSITIONI1")
+
+@builtinunaryop("GxB_POSITIONJ")
+@positionalconstants("GxB_POSITIONJ")
+
+@builtinunaryop("GxB_POSITIONJ1")
+@positionalconstants("GxB_POSITIONJ1")
