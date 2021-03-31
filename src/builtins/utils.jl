@@ -8,6 +8,7 @@ macro builtinunaryop(name)
     end)
 end
 
+
 macro builtinbinaryop(name)
     internalname = Symbol("_" * name)
     esc(quote
@@ -74,7 +75,7 @@ macro integermonoids(name)
     )
     end
 end
-macro unsignedintegermonoid(name)
+macro unsignedintegermonoids(name)
     internalname = Symbol("_" * name * "_MONOID")
     functionname = Symbol(name * "_MONOID")
 
@@ -126,16 +127,16 @@ macro floatmonoids(name)
 end
 
 macro complexmonoids(name)
-    if !isGxB
-        name[1:3] = "GxB"
-    end
     internalname = Symbol("_" * name * "_MONOID")
+    if !isGxB(name)
+        name = "GxB" * name[4:end]
+    end
     functionname = Symbol(name * "_MONOID")
         return esc(quote
-            const $(Symbol(name * "_" * "FC32" * "_MONOID")) = $internalname{ComplexFloat32}()
-            $functionname(::Type{ComplexFloat32}) = $(Symbol(name * "_" * "FC32" * "_MONOID"))
-            const $(Symbol(name * "_" * "FC64" * "_MONOID")) = $internalname{ComplexFloat64}()
-            $functionname(::Type{ComplexFloat64}) = $(Symbol(name * "_" * "FC64" * "_MONOID"))
+            const $(Symbol(name * "_" * "FC32" * "_MONOID")) = $internalname{ComplexF32}()
+            $functionname(::Type{ComplexF32}) = $(Symbol(name * "_" * "FC32" * "_MONOID"))
+            const $(Symbol(name * "_" * "FC64" * "_MONOID")) = $internalname{ComplexF64}()
+            $functionname(::Type{ComplexF64}) = $(Symbol(name * "_" * "FC64" * "_MONOID"))
         end)
 end
 
@@ -156,7 +157,18 @@ macro booleanconstant(name)
     name = Symbol(name)
     esc(quote
         const $constname = $internalname{Bool}()
-            $name(::Type{Bool}) = $constname
+        $name(::Type{Bool}) = $constname
+    end)
+end
+
+macro notypeconstant(name)
+    internalname = Symbol("_" * name)
+    constname = Symbol("CONST_" * name)
+    name = Symbol(name)
+    esc(quote
+        const $constname = $internalname{Bool}()
+        $name() = $constname
+        $name(::Type{Bool}) = $constname
     end)
 end
 

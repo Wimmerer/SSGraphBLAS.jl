@@ -4,7 +4,7 @@
 @floatmonoids("GrB_MIN")
 
 @builtinmonoid("GrB_MAX")
-@unsignedintegermonoid("GrB_MAX")
+@unsignedintegermonoids("GrB_MAX")
 @integermonoids("GrB_MAX")
 @floatmonoids("GrB_MAX")
 
@@ -21,6 +21,7 @@
 @complexmonoids("GrB_TIMES")
 
 @builtinmonoid("GxB_ANY")
+@booleanmonoid("GxB_ANY")
 @unsignedintegermonoids("GxB_ANY")
 @integermonoids("GxB_ANY")
 @floatmonoids("GxB_ANY")
@@ -46,6 +47,9 @@
 
 @builtinmonoid("GxB_BAND")
 @unsignedintegermonoids("GxB_BAND")
+
+@builtinmonoid("GxB_BXOR")
+@unsignedintegermonoids("GxB_BXOR")
 
 @builtinmonoid("GxB_BXNOR")
 @unsignedintegermonoids("GxB_BXNOR")

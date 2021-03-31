@@ -2,9 +2,9 @@ module SuiteSparseGraphBLAS
 
 import Libdl: dlopen_e, dlsym
 using GraphBLASInterface
-using SSGraphBLAS: libgraphblas
+using SSGraphBLAS_jll: libgraphblas
 
-
+include("builtins/utils.jl")
 include("builtins/binaryops.jl")
 include("builtins/monoids.jl")
 include("builtins/selectops.jl")
@@ -38,6 +38,7 @@ function __init__()
 
     # load global variables
     for i = 1:length(global_variables)
+        
         global_variables[i].p = load_global(global_variable_names[i])
     end
 end
@@ -58,7 +59,7 @@ include("operations/apply.jl")
 include("operations/assign.jl")
 include("operations/reduce.jl")
 include("operations/transpose.jl")
-include("operations/select.jl")
+#include("operations/select.jl")
 
 # Higher-level interface
 include("Interface/Interface.jl")

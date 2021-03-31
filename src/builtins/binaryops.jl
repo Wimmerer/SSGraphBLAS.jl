@@ -148,93 +148,93 @@
 @builtinbinaryop("GxB_ATAN2")
 @floatconstants("GxB_ATAN2")
 
-@builtibinaryop("GxB_HYPOT")
+@builtinbinaryop("GxB_HYPOT")
 @floatconstants("GxB_HYPOT")
 
-@builtibinaryop("GxB_FMOD")
+@builtinbinaryop("GxB_FMOD")
 @floatconstants("GxB_FMOD")
 
-@builtibinaryop("GxB_REMAINDER")
+@builtinbinaryop("GxB_REMAINDER")
 @floatconstants("GxB_REMAINDER")
 
-@builtibinaryop("GxB_LDEXP")
+@builtinbinaryop("GxB_LDEXP")
 @floatconstants("GxB_LDEXP")
 
-@builtibinaryop("GxB_COPYSIGN")
+@builtinbinaryop("GxB_COPYSIGN")
 @floatconstants("GxB_COPYSIGN")
 
-@builtibinaryop("GrB_BOR")
+@builtinbinaryop("GrB_BOR")
 @integerconstants("GrB_BOR")
 @unsignedintegerconstants("GrB_BOR")
 
-@builtibinaryop("GrB_BAND")
+@builtinbinaryop("GrB_BAND")
 @integerconstants("GrB_BAND")
 @unsignedintegerconstants("GrB_BAND")
 
-@builtibinaryop("GrB_BXOR")
+@builtinbinaryop("GrB_BXOR")
 @integerconstants("GrB_BXOR")
 @unsignedintegerconstants("GrB_BXOR")
 
-@builtibinaryop("GrB_BXNOR")
+@builtinbinaryop("GrB_BXNOR")
 @integerconstants("GrB_BXNOR")
 @unsignedintegerconstants("GrB_BXNOR")
 
-@builtibinaryop("GxB_BGET")
+@builtinbinaryop("GxB_BGET")
 @integerconstants("GxB_BGET")
 @unsignedintegerconstants("GxB_BGET")
 
-@builtibinaryop("GxB_BSET")
+@builtinbinaryop("GxB_BSET")
 @integerconstants("GxB_BSET")
 @unsignedintegerconstants("GxB_BSET")
 
-@builtibinaryop("GxB_BCLR")
+@builtinbinaryop("GxB_BCLR")
 @integerconstants("GxB_BCLR")
 @unsignedintegerconstants("GxB_BCLR")
 
-@builtibinaryop("GxB_BSHIFT")
+@builtinbinaryop("GxB_BSHIFT")
 @integerconstants("GxB_BSHIFT")
 @unsignedintegerconstants("GxB_BSHIFT")
 
-@builtibinaryop("GrB_EQ")
+@builtinbinaryop("GrB_EQ")
 @booleanconstant("GrB_EQ")
 @integerconstants("GrB_EQ")
 @unsignedintegerconstants("GrB_EQ")
 @floatconstants("GrB_EQ")
 @complexconstants("GrB_EQ")
 
-@builtibinaryop("GrB_NE")
+@builtinbinaryop("GrB_NE")
 @booleanconstant("GrB_NE")
 @integerconstants("GrB_NE")
 @unsignedintegerconstants("GrB_NE")
 @floatconstants("GrB_NE")
 @complexconstants("GrB_NE")
 
-@builtibinaryop("GrB_GT")
+@builtinbinaryop("GrB_GT")
 @booleanconstant("GrB_GT")
 @integerconstants("GrB_GT")
 @unsignedintegerconstants("GrB_GT")
 @floatconstants("GrB_GT")
 
-@builtibinaryop("GrB_LT")
+@builtinbinaryop("GrB_LT")
 @booleanconstant("GrB_LT")
 @integerconstants("GrB_LT")
 @unsignedintegerconstants("GrB_LT")
 @floatconstants("GrB_LT")
 
-@builtibinaryop("GrB_GE")
+@builtinbinaryop("GrB_GE")
 @booleanconstant("GrB_GE")
 @integerconstants("GrB_GE")
 @unsignedintegerconstants("GrB_GE")
 @floatconstants("GrB_GE")
 
-@builtibinaryop("GrB_LE")
+@builtinbinaryop("GrB_LE")
 @booleanconstant("GrB_LE")
 @integerconstants("GrB_LE")
 @unsignedintegerconstants("GrB_LE")
 @floatconstants("GrB_LE")
 
-@builtibinaryop("GxB_CMPLX")
-@floatconstants("GrB_CMPLX")
+@builtinbinaryop("GxB_CMPLX")
+@floatconstants("GxB_CMPLX")
 
 
 @builtinbinaryop("GxB_FIRSTI")

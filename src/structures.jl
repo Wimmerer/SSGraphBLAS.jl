@@ -88,11 +88,11 @@ end
 GrB_Descriptor() = GrB_Descriptor(C_NULL)
 show(io::IO, ::GrB_Descriptor) = print("GrB_Descriptor")
 
-mutable struct GxB_SelectOp <: Abstract_GxB_SelectOp
+#= mutable struct GxB_SelectOp <: Abstract_GxB_SelectOp
     p::Ptr{Cvoid}
 end
 GxB_SelectOp() = GxB_SelectOp(C_NULL)
-show(io::IO, ::GxB_SelectOp) = print("GxB_SelectOp")
+show(io::IO, ::GxB_SelectOp) = print("GxB_SelectOp") =#
 
 struct GrB_NULL_Type <: Abstract_GrB_NULL
     p::Ptr{Cvoid}

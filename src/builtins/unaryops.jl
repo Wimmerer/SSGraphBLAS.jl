@@ -26,12 +26,20 @@ abstract type Abstract_GrB_UnaryOp end
 @unsignedintegerconstants("GxB_LNOT")
 @floatconstants("GxB_LNOT")
 
+
+
 @builtinunaryop("GxB_ONE")
 @booleanconstant("GxB_ONE")
 @integerconstants("GxB_ONE")
 @unsignedintegerconstants("GxB_ONE")
 @floatconstants("GxB_ONE")
 @complexconstants("GxB_ONE")
+
+@builtinunaryop("GrB_ABS")
+@booleanconstant("GrB_ABS")
+@integerconstants("GrB_ABS")
+@unsignedintegerconstants("GrB_ABS")
+@floatconstants("GrB_ABS")
 
 @builtinunaryop("GrB_BNOT")
 @integerconstants("GrB_BNOT")
@@ -152,6 +160,9 @@ abstract type Abstract_GrB_UnaryOp end
 @builtinunaryop("GxB_FREXPE")
 @floatconstants("GxB_FREXPE")
 
+@builtinunaryop("GxB_FREXPX")
+@floatconstants("GxB_FREXPX")
+
 @builtinunaryop("GxB_CONJ")
 @complexconstants("GxB_CONJ")
 
@@ -190,3 +201,15 @@ abstract type Abstract_GrB_UnaryOp end
 
 @builtinunaryop("GxB_POSITIONJ1")
 @positionalconstants("GxB_POSITIONJ1")
+
+@builtinunaryop("GrB_LNOT")
+@notypeconstant("GrB_LNOT")
+
+@builtinunaryop("GrB_LOR")
+@notypeconstant("GrB_LOR")
+@builtinunaryop("GrB_LAND")
+@notypeconstant("GrB_LAND")
+@builtinunaryop("GrB_LXOR")
+@notypeconstant("GrB_LXOR")
+@builtinunaryop("GrB_LXNOR")
+@notypeconstant("GrB_LXNOR")
