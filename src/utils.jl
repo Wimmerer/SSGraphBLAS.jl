@@ -22,3 +22,15 @@ function suffix(T::DataType)
     end
     return "FP64"
 end
+
+
+function load_global(str)
+    x = dlsym(graphblas_lib, str)
+    return unsafe_load(cglobal(x, Ptr{Cvoid}))
+end
+
+function splitconstant(str)
+    return String.(split(str, "_"))
+end
+
+isGxB(name) = name[1:3] == "GxB"

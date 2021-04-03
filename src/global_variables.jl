@@ -2,19 +2,6 @@ const GrB_NULL = GrB_NULL_Type(C_NULL)
 
 const GrB_ALL = GrB_ALL_Type(C_NULL)
 
-# GraphBLAS types
-const GrB_BOOL = GrB_Type{Bool}()
-const GrB_INT8 = GrB_Type{Int8}()
-const GrB_UINT8 = GrB_Type{UInt8}()
-const GrB_INT16 = GrB_Type{Int16}()
-const GrB_UINT16 = GrB_Type{UInt16}()
-const GrB_INT32 = GrB_Type{Int32}()
-const GrB_UINT32 = GrB_Type{UInt32}()
-const GrB_INT64 = GrB_Type{Int64}()
-const GrB_UINT64 = GrB_Type{UInt64}()
-const GrB_FP32 = GrB_Type{Float32}()
-const GrB_FP64 = GrB_Type{Float64}()
-
 const unaryop_strings = [
 "GrB_IDENTITY_BOOL",
 "GrB_AINV_BOOL",

@@ -40,10 +40,11 @@ OneBasedIndex(a::ZeroBasedIndex) = OneBasedIndex(a.x+1)
 Vector{ZeroBasedIndex}(arr::OneBasedIndices) = ZeroBasedIndex.(arr)
 Vector{OneBasedIndex}(arr::ZeroBasedIndices) = OneBasedIndex.(arr)
 
-mutable struct GrB_Type{T <: valid_types} <: Abstract_GrB_Type
+struct GrB_Type{T <: valid_types} <: Abstract_GrB_Type
     p::Ptr{Cvoid}
 end
-GrB_Type{T}() where T = GrB_Type{T}(C_NULL)
+GrB_Type() = GrB_Type{Nothing}(C_NULL)
+GrB_Type{T}(name) where T = GrB_Type{T}(load_global(name))
 show(io::IO, ::GrB_Type{T}) where T = print("GrB_Type{" * string(T) * "}")
 
 mutable struct GrB_UnaryOp <: Abstract_GrB_UnaryOp
@@ -94,12 +95,7 @@ end
 GxB_SelectOp() = GxB_SelectOp(C_NULL)
 show(io::IO, ::GxB_SelectOp) = print("GxB_SelectOp") =#
 
-struct GrB_NULL_Type <: Abstract_GrB_NULL
-    p::Ptr{Cvoid}
-end
-show(io::IO, ::GrB_NULL_Type) = print("GrB_NULL")
-
-mutable struct GrB_ALL_Type <: Abstract_GrB_ALL
+struct GrB_ALL_Type <: Abstract_GrB_ALL
     p::Ptr{Cvoid}
 end
 pointer(x::GrB_ALL_Type) = x.p

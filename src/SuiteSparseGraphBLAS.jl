@@ -1,30 +1,36 @@
 module SuiteSparseGraphBLAS
 
-import Libdl: dlopen_e, dlsym
-using GraphBLASInterface
+import Libdl: dlopen, dlsym
 using SSGraphBLAS_jll: libgraphblas
 
-include("builtins/utils.jl")
-include("builtins/binaryops.jl")
+include("utils.jl")
+#include("structures.jl")
+include("abstracts.jl")
+include("unaryops.jl")
+include("binaryops.jl")
+#=include("builtins/utils.jl")
 include("builtins/monoids.jl")
 include("builtins/selectops.jl")
 include("builtins/semirings.jl")
-include("builtins/unaryops.jl")
-include("structures.jl")
-include("global_variables.jl")
-include("utils.jl")
+include("builtins/unaryops.jl") =#
 
-const valid_matrix_mask_types = Union{GrB_Matrix, GrB_NULL_Type}
-const valid_vector_mask_types = Union{GrB_Vector, GrB_NULL_Type}
-const valid_accum_types = Union{GrB_BinaryOp, GrB_NULL_Type}
-const valid_desc_types = Union{GrB_Descriptor, GrB_NULL_Type}
+#include("global_variables.jl")
+
+
+#= const valid_matrix_mask_types = Union{GrB_Matrix, GrB_Type{Nothing}}
+const valid_vector_mask_types = Union{GrB_Vector, GrB_Type{Nothing}}
+const valid_accum_types = Union{GrB_BinaryOp, GrB_Type{Nothing}}
+const valid_desc_types = Union{GrB_Descriptor, GrB_Type{Nothing}} =#
 
 graphblas_lib = C_NULL
 
 function __init__()
-    global graphblas_lib = dlopen_e(libgraphblas)
+    global graphblas_lib = dlopen(libgraphblas; throw_error=false)
 
-    function load_global(str)
+    #load_globaltypes()
+    loadunaryops()
+    loadbinaryops()
+    #=function load_global(str)
         x =
         try
             dlsym(graphblas_lib, str)
@@ -37,13 +43,13 @@ function __init__()
     end
 
     # load global variables
-    for i = 1:length(global_variables)
+    for i = 1:length(unaryop_strings)
         
         global_variables[i].p = load_global(global_variable_names[i])
-    end
+    end =#
 end
 
-include("context_methods.jl")
+#= include("context_methods.jl")
 include("sequence_termination.jl")
 include("object_methods/matrix.jl")
 include("object_methods/vector.jl")
@@ -586,5 +592,5 @@ GrB_NULL,
 #########################################################################
 
 GrB_ALL
-
-end #end of module
+=#
+end #end of module 

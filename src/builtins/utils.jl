@@ -69,7 +69,7 @@ macro semiringcontainer(name)
     end)
 end
 
-isGxB(name) = name[1:3] == "GxB"
+
 
 macro booleanmonoid(name)
     containername = Symbol("Container_" * name * "_MONOID")
@@ -120,12 +120,13 @@ end
 
 
 macro booleanconstant(name)
-    containername = Symbol("_" * name)
-    constname = Symbol(name * "_BOOL")
-    name = Symbol(name)
+    opname = Symbol("_" * name)
+    exportedname = Symbol(splitconstant(name)[2])
+    constname = name * "_BOOL"
+    constsymbol = Symbol(constname)
     esc(quote
-        const $constname = $containername{Bool}()
-        $name(::Type{Bool}) = $constname
+        const $constsymbol = $opname{Bool}(load_global($constname))
+        $exportedname.typedconstants[Bool] = $constsymbol
     end)
 end
 
@@ -208,4 +209,9 @@ macro complexconstants(name)
             $functionname(::Type{ComplexF64}) = $(Symbol(name * "_" * "FC64"))
     end
     )
-end    
+end
+
+function splitconstant(str)
+    return String.(split(str, "_"))
+end
+
