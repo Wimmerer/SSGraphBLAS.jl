@@ -70,7 +70,7 @@ MAT, 5 entries
     (3,3)   6
 ```
 """
-function GrB_Matrix_build(C::GrB_Matrix{T}, I::ZeroBasedIndices, J::ZeroBasedIndices, X::Vector{T}, nvals::Union{Int64, UInt64}, dup::GrB_BinaryOp) where T
+function GrB_Matrix_build(C::GrB_Matrix{T}, I::ZeroBasedIndices, J::ZeroBasedIndices, X::Vector{T}, nvals::Union{Int64, UInt64}, dup::Abstract_BinaryOp) where T
     I_ptr = pointer(I)
     J_ptr = pointer(J)
     X_ptr = pointer(X)
