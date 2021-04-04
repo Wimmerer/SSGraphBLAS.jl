@@ -23,11 +23,17 @@ function suffix(T::DataType)
     return "FP64"
 end
 
-
 function load_global(str)
-    x = dlsym(graphblas_lib, str)
+    x =
+    try
+        dlsym(graphblas_lib, str)
+    catch
+        print("Symbol not available: " * str * "\n")
+        return C_NULL
+    end
     return unsafe_load(cglobal(x, Ptr{Cvoid}))
 end
+
 
 function splitconstant(str)
     return String.(split(str, "_"))

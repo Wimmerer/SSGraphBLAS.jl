@@ -3,16 +3,21 @@ module SuiteSparseGraphBLAS
 import Libdl: dlopen, dlsym
 using SSGraphBLAS_jll: libgraphblas
 
-include("utils.jl")
-#include("structures.jl")
 include("abstracts.jl")
+include("utils.jl")
+include("types.jl")
+include("global_variables.jl") 
+#include("structures.jl")
 include("unaryops.jl")
 include("binaryops.jl")
+include("monoids.jl")
+include("selectops.jl")
+include("semirings.jl")
+
 #=include("builtins/utils.jl")
-include("builtins/monoids.jl")
-include("builtins/selectops.jl")
-include("builtins/semirings.jl")
-include("builtins/unaryops.jl") =#
+
+
+=#
 
 #include("global_variables.jl")
 
@@ -30,6 +35,10 @@ function __init__()
     #load_globaltypes()
     loadunaryops()
     loadbinaryops()
+    loadmonoids()
+    loadselectops()
+    loadsemirings()
+    load_globaltypes()
     #=function load_global(str)
         x =
         try

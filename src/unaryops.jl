@@ -14,8 +14,9 @@ function loadunaryops()
     positionals = [ "GxB_POSITIONI", "GxB_POSITIONI1", "GxB_POSITIONJ", "GxB_POSITIONJ1"]
 
     for name ∈ builtins
-        opname = Symbol("_" * name)
-        exportedname = Symbol(splitconstant(name)[2])
+        simple = splitconstant(name)[2]
+        opname = Symbol("_" * simple)
+        exportedname = Symbol(simple)
         structquote = quote
             struct $opname{T} <: Abstract_GrB_UnaryOp
                 p::Ptr{Cvoid}
@@ -28,10 +29,10 @@ function loadunaryops()
         @eval($structquote)
     end
     for name ∈ booleans
-        opname = Symbol("_" * name)
-        exportedname = Symbol(splitconstant(name)[2])
+        simple = splitconstant(name)[2]
+        opname = Symbol("_" * simple)
+        exportedname = Symbol(simple)
         constname = name * "_BOOL"
-        constsymbol = Symbol(constname)
         boolquote = quote
             $exportedname.typed[Bool] = $opname{Bool}(load_global($constname))
         end
@@ -39,8 +40,9 @@ function loadunaryops()
     end
 
     for name ∈ integers
-        opname = Symbol("_" * name)
-        exportedname = Symbol(splitconstant(name)[2])
+        simple = splitconstant(name)[2]
+        opname = Symbol("_" * simple)
+        exportedname = Symbol(simple)
         integerquote = quote 
             $exportedname.typed[Int8] = $opname{Int8}(load_global($(name * "_INT8")))
             $exportedname.typed[Int16] = $opname{Int16}(load_global($(name * "_INT16")))
@@ -51,8 +53,9 @@ function loadunaryops()
     end
 
     for name ∈ unsignedintegers
-        opname = Symbol("_" * name)
-        exportedname = Symbol(splitconstant(name)[2])
+        simple = splitconstant(name)[2]
+        opname = Symbol("_" * simple)
+        exportedname = Symbol(simple)
         unsignedintegerquote = quote 
             $exportedname.typed[UInt8] = $opname{UInt8}(load_global($(name * "_UINT8")))
             $exportedname.typed[UInt16] = $opname{UInt16}(load_global($(name * "_UINT16")))
@@ -63,8 +66,9 @@ function loadunaryops()
     end
 
     for name ∈ floats
-        opname = Symbol("_" * name)
-        exportedname = Symbol(splitconstant(name)[2])
+        simple = splitconstant(name)[2]
+        opname = Symbol("_" * simple)
+        exportedname = Symbol(simple)
         floatquote = quote 
             $exportedname.typed[Float32] = $opname{Float32}(load_global($(name * "_FP32")))
             $exportedname.typed[Float64] = $opname{Float64}(load_global($(name * "_FP64")))
